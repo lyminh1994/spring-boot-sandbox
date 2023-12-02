@@ -1,16 +1,14 @@
 spring:
   devtools:
     add-properties: false
-  docker:
-    compose:
-      enabled: false
   jpa:
-    open-in-view: false
+    open-in-view: true
+    show-sql: true
   mvc:
     log-request-details: true
     dispatch-trace-request: true
 logging:
   level:
     root: info
-    web: trace
+    web: info
     com.example.modulith: info
