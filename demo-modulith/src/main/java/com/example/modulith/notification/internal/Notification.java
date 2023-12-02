@@ -1,19 +1,16 @@
 package com.example.modulith.notification.internal;
 
-import lombok.Data;
-
 import java.util.Date;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Notification {
 
   private String productName;
   private Date date;
   private NotificationType format;
-
-  public Notification(Date date, NotificationType format, String productName) {
-    this.productName = productName;
-    this.date = date;
-    this.format = format;
-  }
 }

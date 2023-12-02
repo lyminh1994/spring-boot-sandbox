@@ -3,7 +3,7 @@ package com.example.modulith.notification;
 import com.example.modulith.notification.internal.Notification;
 import com.example.modulith.notification.internal.NotificationType;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.modulith.ApplicationModuleListener;
+import org.springframework.modulith.events.ApplicationModuleListener;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +24,6 @@ public class NotificationService {
 
   private Notification toEntity(NotificationDTO event) {
     return new Notification(
-        event.date(), NotificationType.valueOf(event.format()), event.productName());
+        event.productName(), event.date(), NotificationType.valueOf(event.format()));
   }
 }
