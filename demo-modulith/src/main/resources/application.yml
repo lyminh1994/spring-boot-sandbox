@@ -1,0 +1,16 @@
+spring:
+  devtools:
+    add-properties: false
+  docker:
+    compose:
+      enabled: false
+  jpa:
+    open-in-view: false
+  mvc:
+    log-request-details: true
+    dispatch-trace-request: true
+logging:
+  level:
+    root: info
+    web: trace
+    com.example.modulith: info
