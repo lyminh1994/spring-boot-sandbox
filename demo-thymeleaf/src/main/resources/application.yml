@@ -1,0 +1,39 @@
+spring:
+  docker:
+    compose:
+      lifecycle-management: start_only
+      enabled: false
+  datasource:
+    url: jdbc:postgresql://113.172.227.79:5432/postgres
+    username: postgres
+    password: Root@123
+  jpa:
+    open-in-view: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  freemarker:
+    template-loader-path: classpath:/freemarker/
+    suffix: .ftl
+  mvc:
+    log-request-details: true
+    dispatch-trace-request: true
+  cache:
+    type: redis
+    redis:
+      cache-null-values: false
+      time-to-live: 5m
+  cloud:
+    compatibility-verifier:
+      enabled: false
+  data:
+    web:
+      pageable:
+        default-page-size: 2
+    redis:
+      host: 113.172.227.79
+logging:
+  level:
+    root: info
+    web: trace
+    dev.hobie.thymeleaf: trace
