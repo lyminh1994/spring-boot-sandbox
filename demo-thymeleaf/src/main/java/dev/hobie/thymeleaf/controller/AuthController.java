@@ -52,7 +52,7 @@ public class AuthController {
     }
 
     model.addAttribute("user", RegisterDTO.builder().build());
-    return "/auth/register";
+    return "/auth/register-v2";
   }
 
   @GetMapping("/login")
@@ -76,5 +76,10 @@ public class AuthController {
     }
 
     return "/auth/login-v2";
+  }
+
+  @GetMapping("/forgot-password")
+  public String forgotPassword(){
+    return "/auth/forgot-password-v2";
   }
 }

@@ -13,8 +13,11 @@ spring:
     hibernate:
       ddl-auto: update
   freemarker:
-    template-loader-path: classpath:/freemarker/
     suffix: .ftl
+  thymeleaf:
+    check-template: false
+    cache: false
+    template-resolver-order: 1
   mvc:
     log-request-details: true
     dispatch-trace-request: true
@@ -23,17 +26,16 @@ spring:
     redis:
       cache-null-values: false
       time-to-live: 5m
-  cloud:
-    compatibility-verifier:
-      enabled: false
   data:
     web:
       pageable:
         default-page-size: 2
     redis:
       host: 113.172.227.79
+      port: 6379
+      database: 1
 logging:
   level:
-    root: info
-    web: trace
-    dev.hobie.thymeleaf: trace
+    root: INFO
+    web: TRACE
+    dev.hobie.thymeleaf: TRACE

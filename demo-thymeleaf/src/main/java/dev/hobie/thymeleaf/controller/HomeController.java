@@ -25,7 +25,7 @@ public class HomeController {
     try {
       var templateModel = new HashMap<String, Object>();
       templateModel.put("username", userDetails.getUsername());
-      var template = freeMarkerConfig.getConfiguration().getTemplate("Entity.ftl");
+      var template = freeMarkerConfig.getConfiguration().getTemplate("freemarker/Entity.ftl");
       var result = FreeMarkerTemplateUtils.processTemplateIntoString(template, templateModel);
       model.addAttribute("freemarker", result);
     } catch (IOException | TemplateException e) {

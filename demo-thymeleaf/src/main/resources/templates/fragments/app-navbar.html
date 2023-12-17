@@ -61,7 +61,6 @@
                             </p>
                         </div>
                     </div>
-                    
                 </a>
                 <div class="dropdown-divider"></div>
                 <a href="#" class="dropdown-item">
@@ -83,7 +82,6 @@
                             </p>
                         </div>
                     </div>
-                    
                 </a>
                 <div class="dropdown-divider"></div>
                 <a href="#" class="dropdown-item">
@@ -105,7 +103,6 @@
                             </p>
                         </div>
                     </div>
-                    
                 </a>
                 <div class="dropdown-divider"></div>
                 <a href="#" class="dropdown-item dropdown-footer">
@@ -142,22 +139,29 @@
                 </a>
             </div>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-                <i class="fas fa-expand-arrows-alt"></i>
+        <!-- User Menu -->
+        <li class="nav-item dropdown user-menu">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                <img th:src="@{/img/user8-128x128.jpg}" class="user-image img-circle elevation-2" alt="User Image">
+                <span class="d-none d-md-inline">John Doe</span>
             </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-                <i class="fas fa-th-large"></i>
-            </a>
+            <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <!-- User image -->
+                <li class="user-header mt-3">
+                    <img th:src="@{/img/user8-128x128.jpg}" class="img-circle elevation-2" alt="User Image">
+                    <p>
+                        John Doe
+                        <small>Web Developer</small>
+                    </p>
+                </li>
+                <!-- Menu Footer-->
+                <li class="user-footer">
+                    <a href="/examples/profile" class="btn btn-default btn-flat"><i class="fas fa-user-alt"></i> Profile</a>
+                    <a href="/logout" class="btn btn-default btn-flat float-right">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </li>
+            </ul>
         </li>
     </ul>
 </nav>
-<aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-    <div class="p-3">
-        <h5>Title</h5>
-        <p>Sidebar content</p>
-    </div>
-</aside>

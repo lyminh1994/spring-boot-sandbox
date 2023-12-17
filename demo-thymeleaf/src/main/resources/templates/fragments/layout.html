@@ -17,24 +17,14 @@
 </head>
 <body class="hold-transition sidebar-mini layout-fixed pace-primary">
     <div class="wrapper">
-        <!-- Preloader -->
-        <!--<div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" th:src="@{/img/AdminLTELogo.png}" alt="AdminLTELogo" height="60" width="60">
-        </div>-->
         <!-- Navbar -->
         <th:block th:insert="~{fragments/app-navbar :: nav}"></th:block>
         <!-- Main Sidebar Container -->
         <th:block th:insert="~{fragments/app-sidebar :: aside}"></th:block>
         <!-- Content Wrapper. Contains page content -->
         <th:block th:insert="${content}"></th:block>
-        <!-- Control Sidebar -->
-        <th:block th:insert="~{fragments/app-navbar :: aside}"></th:block>
         <!-- Main Footer -->
         <th:block th:insert="~{fragments/app-footer :: footer}"></th:block>
-        <!-- Back To Top -->
-        <a id="back-to-top" href="#" class="btn btn-primary back-to-top" role="button" aria-label="Scroll to top">
-            <i class="fas fa-chevron-up"></i>
-        </a>
     </div>
     <!-- jQuery -->
     <script th:src="@{/plugins/jquery/jquery.min.js}"></script>
@@ -46,24 +36,5 @@
     <th:block th:replace="${scripts}"></th:block>
     <!-- AdminLTE App -->
     <script th:src="@{/js/adminlte.min.js}"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script th:src="@{/js/demo.js}"></script>
-    <script>
-        $(function () {
-            // Show/hide the Back to Top button based on scroll position
-            $(window).scroll(function () {
-                if ($(this).scrollTop() > 20) {
-                    $('#back-to-top').fadeIn();
-                } else {
-                    $('#back-to-top').fadeOut();
-                }
-            });
-            // Smooth scroll to top
-            $('#back-to-top').click(function () {
-                $('html, body').animate({ scrollTop: 0 }, 800);
-                return false;
-            });
-        });
-    </script>
 </body>
 </html>

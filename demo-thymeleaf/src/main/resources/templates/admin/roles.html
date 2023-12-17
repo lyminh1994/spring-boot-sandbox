@@ -6,6 +6,7 @@
     <title>Roles</title>
 </head>
 <body>
+<div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <div class="container-fluid">
@@ -20,13 +21,13 @@
                     </ol>
                 </div>
             </div>
-        </div><!-- /.container-fluid -->
+        </div>
     </section>
     <!-- Main content -->
     <section class="content">
         <div class="row mb-2">
             <div class="col-sm-12">
-                <button type="button" class="btn btn-success float-right" data-toggle="modal" data-target="#modal-add">
+                <button type="button" class="btn btn-success float-right" data-toggle="modal" data-target="#add-role">
                     <i class="fas fa-plus"></i> Add item
                 </button>
             </div>
@@ -95,19 +96,25 @@
                         </tr>
                     </tbody>
                 </table>
-            </div><!-- /.card-body -->
+            </div>
             <div class="card-footer clearfix">
                 <ul class="pagination pagination-sm m-0 float-right">
-                    <li class="page-item" th:classappend="${roles.first ? 'disabled' : ''}"><a class="page-link" th:href="@{''}">&laquo;</a></li>
+                    <li class="page-item" th:classappend="${roles.first ? 'disabled' : ''}">
+                        <a class="page-link" th:href="@{''}">&laquo;</a>
+                    </li>
                     <th:block th:each="page : ${pageNumbers}">
-                        <li class="page-item"><a class="page-link" href="#" th:text="${page}">1</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">[[${page}]]</a>
+                        </li>
                     </th:block>
-                    <li class="page-item" th:classappend="${roles.last ? 'disabled' : ''}"><a class="page-link" th:href="@{''}">&raquo;</a></li>
+                    <li class="page-item" th:classappend="${roles.last ? 'disabled' : ''}">
+                        <a class="page-link" th:href="@{''}">&raquo;</a>
+                    </li>
                 </ul>
             </div>
-        </div><!-- /.card -->
-    </section><!-- /.content -->
-    <div class="modal fade" id="modal-add">
+        </div>
+    </section>
+    <div class="modal fade" id="add-role">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -117,35 +124,34 @@
                     </button>
                 </div>
                 <form class="form-horizontal">
-                <div class="modal-body">
-                    <div class="form-group row">
-                        <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
-                        <div class="col-sm-10">
-                            <input type="email" class="form-control" id="inputEmail3" placeholder="Enter name">
+                    <div class="modal-body">
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="inputEmail3" placeholder="Enter name">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputEmail2" class="col-sm-2 col-form-label">Description</label>
-                        <div class="col-sm-10">
-                            <textarea class="form-control" rows="3" placeholder="Enter description..." id="inputEmail2"></textarea>
+                        <div class="form-group row">
+                            <label for="inputEmail2" class="col-sm-2 col-form-label">Description</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" rows="3" placeholder="Enter description..." id="inputEmail2"></textarea>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="offset-sm-2 col-sm-10">
-                            <div class="custom-control custom-switch">
+                        <div class="form-group row">
+                            <label for="customSwitch1" class="col-sm-2 col-form-label">Active</label>
+                            <div class="col-sm-10">
                                 <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                                <label class="custom-control-label" for="customSwitch1">Active</label>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer justify-content-between">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
                 </form>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
